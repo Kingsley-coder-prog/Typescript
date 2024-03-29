@@ -1,4 +1,7 @@
-function combine(n1: number | string, n2: number | string, resultConversion: "as-number" | "as-text") {
+type Combineable = number | string;
+type ConversionDescriptor = "as-number" | "as-text";
+
+function combine(n1: Combineable, n2: Combineable, resultConversion: ConversionDescriptor) {
   let result;
   if ((typeof n1 === "number" && typeof n2 === "number") || resultConversion === "as-number") {
     result = +n1 + +n2;
