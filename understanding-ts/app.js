@@ -1,8 +1,15 @@
 console.log("Your code goes here...");
-function add(num1, num2) {
-    return num1 + num2;
+function add(n1, n2, showResult, phrase) {
+    var result = n1 + n2;
+    if (showResult) {
+        console.log(phrase + result);
+    }
+    else {
+        return result;
+    }
 }
-var num1 = "5";
+var num1 = 5;
 var num2 = 2.8;
-var result = add(+num1, num2);
-console.log(result);
+var printResult = true;
+var resultPhrase = "result is: ";
+add(num1, num2, printResult, resultPhrase);
