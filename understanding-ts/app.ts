@@ -1,45 +1,14 @@
-// const person: {
-//     name: string;
-//     age: number
-// }
-
-/// Object type, Array type
-// const person: {
-//   name: string;
-//   age: number;
-//   hobbies: string[];
-//   role: [number, string];
-// } = {
-//   name: "John",
-//   age: 34,
-//   hobbies: ["Sport", "Gaming"],
-//   role: [1, "author"]
-// };
-
-// Enum
-
-enum Role {
-  ADMIN,
-  READ_ONLY,
-  AUTHOR
-}
-const person = {
-  name: "John",
-  age: 34,
-  hobbies: ["Sport", "Gaming"],
-  role: Role.ADMIN
-};
-console.log(person.name);
-
-// person.role.push("admin");
-// person.role[1] = 10
-// person.role = [0, 'admin', 'user']
-
-for (const hobby of person.hobbies) {
-  console.log(hobby.toUpperCase());
-  //   console.log(hobby.map()) ERROR! map doesn't exist on type string
+function combine(n1: number | string, n2: number | string) {
+  let result;
+  if (typeof n1 === "number" && typeof n2 === "number") {
+    result = n1 + n2;
+  } else {
+    result = n1.toString() + n2.toString();
+  }
+  return result;
 }
 
-if (person.role === Role.ADMIN) {
-  console.log("is author");
-}
+const combinedAges = combine(30, 26);
+console.log(combinedAges);
+const combinedNames = combine("Max", "Anna");
+console.log(combinedNames);
