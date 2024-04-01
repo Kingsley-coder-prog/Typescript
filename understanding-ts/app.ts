@@ -1,7 +1,7 @@
 let userInput: unknown;
 let userName: string;
 
-userInput = 5;
+userInput = 8;
 userInput = "Max";
 
 if (typeof userInput === "string") {
