@@ -32,3 +32,11 @@ const add = (...numbers: number[]) => {
 
 const addNumbers = add(5, 4, 3, 3.7);
 console.log(addNumbers);
+
+// Array and Object Destructuring
+const hobbies = ["Hiking", "Swimming", "Biking"];
+const [hobby1, hobby2, ...remainingHobby] = hobbies;
+console.log(hobby1, hobby2, remainingHobby, hobbies);
+
+const { userName, age } = person;
+console.log(userName, age, person);
