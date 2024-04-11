@@ -39,4 +39,4 @@ const [hobby1, hobby2, ...remainingHobby] = hobbies;
 console.log(hobby1, hobby2, remainingHobby, hobbies);
 
 const { userName, age } = person;
-console.log("Say my name right: ", userName, age, person);
+console.log("Say my name right:: ", userName, age, person);
