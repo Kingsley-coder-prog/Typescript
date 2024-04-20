@@ -6,14 +6,14 @@ class Department {
   }
 
   describe(this: Department) {
-    console.log('Department: ' + this.name);
+    console.log("Department: " + this.name);
   }
 }
 
-const accounting = new Department('Accounting');
+const accounting = new Department("Accounting");
 
 accounting.describe();
 
-const accountingCopy = { name: 'DUMMY', describe: accounting.describe };
+const accountingCopy = { name: "Dummy", describe: accounting.describe };
 
 accountingCopy.describe();
