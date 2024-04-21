@@ -27,56 +27,55 @@ class Department {
 class ITDepartment extends Department {
   admins: string[];
   constructor(id: string, admins: string[]) {
-    super(id, "IT");
+    super(id, 'IT');
     this.admins = admins;
   }
 }
 
 class AccountingDepartment extends Department {
-  // reports: string[];
   constructor(id: string, private reports: string[]) {
-    super(id, "Accounting");
-    this.reports = reports;
+    super(id, 'Accounting');
   }
 
   addEmployee(name: string) {
-    if (name === "King") {
+    if (name === 'Max') {
       return;
     }
     this.employees.push(name);
   }
 
-  addReports(text: string) {
+  addReport(text: string) {
     this.reports.push(text);
   }
 
   printReports() {
     console.log(this.reports);
-    console.log("Total reports: " + this.reports.length);
   }
 }
 
-const IT = new ITDepartment("d1", ["Max"]);
+const it = new ITDepartment('d1', ['Max']);
 
-IT.addEmployee("Max");
-IT.addEmployee("Manu");
+it.addEmployee('Max');
+it.addEmployee('Manu');
 
-// IT.employees[2] = 'Anna';
+// it.employees[2] = 'Anna';
 
-IT.describe();
-IT.name = "NEW NAME";
-IT.printEmployeeInformation();
-console.log(IT);
+it.describe();
+it.name = 'NEW NAME';
+it.printEmployeeInformation();
 
-const accounting = new AccountingDepartment("d1", []);
-accounting.addReports("Update not uploaded");
+console.log(it);
 
-accounting.addEmployee("King");
-accounting.addEmployee("Kina");
+const accounting = new AccountingDepartment('d2', []);
+
+accounting.addReport('Something went wrong...');
+
+accounting.addEmployee('Max');
+accounting.addEmployee('Manu');
 
 accounting.printReports();
 accounting.printEmployeeInformation();
 
-// const ITCopy = { name: 'DUMMY', describe: IT.describe };
+// const accountingCopy = { name: 'DUMMY', describe: accounting.describe };
 
-// ITCopy.describe();
+// accountingCopy.describe();
