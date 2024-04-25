@@ -30,3 +30,23 @@ user1 = new Person("Max");
 //     console.log(phrase + " " + this.name);
 //   }
 // };
+
+class Myself {
+  name: string;
+  age: number;
+  job: string;
+  constructor(name: string, age: number, job: string) {
+    this.name = name;
+    this.age = age;
+    this.job = job;
+  }
+
+  stateJob(name: string, age: number, job: string) {
+    console.log(`My name is ${name} and age is ${age}. I am a ${job}`);
+  }
+}
+
+const myself = new Myself("John", 30, "Software Engineering");
+console.log(myself);
+
+myself.stateJob("John Doe", 30, "Software Engineering");
