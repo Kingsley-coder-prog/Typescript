@@ -32,13 +32,13 @@ user1 = new Person("Max");
 // };
 
 class Myself {
-  name: string;
-  age: number;
-  job: string;
-  constructor(name: string, age: number, job: string) {
-    this.name = name;
-    this.age = age;
-    this.job = job;
+  // name: string;
+  // age: number;
+  // job: string;
+  constructor(protected name: string, protected age: number, protected job: string) {
+    // this.name = name;
+    // this.age = age;
+    // this.job = job;
   }
 
   stateJob(name: string, age: number, job: string) {
