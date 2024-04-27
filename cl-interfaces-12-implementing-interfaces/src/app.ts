@@ -46,7 +46,7 @@ class Myself {
   }
 }
 
-const myself = new Myself("John", 30, "Software Engineering");
+const myself = new Myself("John", 20, "Software Engineering");
 console.log(myself);
 
-myself.stateJob("John Doe", 30, "Software Engineering");
+myself.stateJob("John Doe", 20, "Software Engineering");
