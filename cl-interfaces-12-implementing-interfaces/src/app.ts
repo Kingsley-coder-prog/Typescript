@@ -7,14 +7,14 @@ interface Greetable {
 
 class Person implements Greetable {
   name: string;
-  age = 30;
+  age = 20;
 
   constructor(n: string) {
     this.name = n;
   }
 
-  greet(phrase: string) {
-    console.log(phrase + " " + this.name);
+  greet(xphrase: string) {
+    console.log(xphrase + " " + this.name);
   }
 }
 
@@ -46,7 +46,7 @@ class Myself {
   }
 }
 
-const myself = new Myself("John", 30, "Software Engineering");
+const myself = new Myself("John", 20, "Software Engineering");
 console.log(myself);
 
-myself.stateJob("John Doe", 30, "Software Engineering");
+myself.stateJob("John Doe", 20, "Software Engineering");
