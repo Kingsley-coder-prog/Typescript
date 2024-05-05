@@ -20,7 +20,7 @@ interface Greetable extends Named {
 
 class Person implements Greetable {
   name?: string;
-  age = 20;
+  age = 30;
 
   constructor(n?: string) {
     if (n) {
