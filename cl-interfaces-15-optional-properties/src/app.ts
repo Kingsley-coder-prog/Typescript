@@ -32,7 +32,7 @@ class Person implements Greetable {
     if (this.name) {
       console.log(phrase + " " + this.name);
     } else {
-      console.log("Hi!");
+      console.log("Hi wadup!");
     }
   }
 }
