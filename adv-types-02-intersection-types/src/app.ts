@@ -1,6 +1,6 @@
 type Admin = {
   name: string;
-  privileges: string[];
+  priviledges: string[];
 };
 
 type Employee = {
@@ -8,13 +8,11 @@ type Employee = {
   startDate: Date;
 };
 
-// interface ElevatedEmployee extends Employee, Admin {}
-
 type ElevatedEmployee = Admin & Employee;
 
 const e1: ElevatedEmployee = {
-  name: 'Max',
-  privileges: ['create-server'],
+  name: "Max",
+  priviledges: ["create-server"],
   startDate: new Date()
 };
 
