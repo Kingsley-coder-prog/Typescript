@@ -1,6 +1,6 @@
 type Admin = {
   name: string;
-  privileges: string[];
+  priviledges: string[];
 };
 
 type Employee = {
@@ -8,13 +8,11 @@ type Employee = {
   startDate: Date;
 };
 
-// interface ElevatedEmployee extends Employee, Admin {}
-
 type ElevatedEmployee = Admin & Employee;
 
 const e1: ElevatedEmployee = {
-  name: 'Max',
-  privileges: ['create-server'],
+  name: "Max",
+  priviledges: ["create-server"],
   startDate: new Date()
 };
 
@@ -24,39 +22,40 @@ type Numeric = number | boolean;
 type Universal = Combinable & Numeric;
 
 function add(a: Combinable, b: Combinable) {
-  if (typeof a === 'string' || typeof b === 'string') {
+  if (typeof a === "string" || typeof b === "string") {
     return a.toString() + b.toString();
   }
   return a + b;
 }
 
-type UnknownEmployee = Employee | Admin;
+type UnkownEmployee = Admin | Employee;
 
-function printEmployeeInformation(emp: UnknownEmployee) {
-  console.log('Name: ' + emp.name);
-  if ('privileges' in emp) {
-    console.log('Privileges: ' + emp.privileges);
+function printEmployeeInfo(emp: UnkownEmployee) {
+  console.log("Name: " + emp.name);
+  if ("privileges" in emp) {
+    console.log("privileges: " + emp.privileges);
   }
-  if ('startDate' in emp) {
-    console.log('Start Date: ' + emp.startDate);
+
+  if ("startDate" in emp) {
+    console.log("Start Date: " + emp.startDate);
   }
 }
 
-printEmployeeInformation({ name: 'Manu', startDate: new Date() });
+printEmployeeInfo({ name: "Kyle", startDate: new Date() });
 
 class Car {
   drive() {
-    console.log('Driving...');
+    console.log("Driving ...");
   }
 }
 
 class Truck {
   drive() {
-    console.log('Driving a truck...');
+    console.log("Driving a truck!");
   }
 
-  loadCargo(amount: number) {
-    console.log('Loading cargo ...' + amount);
+  loadingCargo(amount: number) {
+    console.log("Loading cargo... " + amount);
   }
 }
 
@@ -67,8 +66,8 @@ const v2 = new Truck();
 
 function useVehicle(vehicle: Vehicle) {
   vehicle.drive();
-  if (vehicle instanceof Truck) {
-    vehicle.loadCargo(1000);
+  if ("loadingCargo" in vehicle) {
+    vehicle.loadingCargo(1000);
   }
 }
 
@@ -76,12 +75,12 @@ useVehicle(v1);
 useVehicle(v2);
 
 interface Bird {
-  type: 'bird';
+  type: "bird";
   flyingSpeed: number;
 }
 
 interface Horse {
-  type: 'horse';
+  type: "horse";
   runningSpeed: number;
 }
 
@@ -90,20 +89,21 @@ type Animal = Bird | Horse;
 function moveAnimal(animal: Animal) {
   let speed;
   switch (animal.type) {
-    case 'bird':
+    case "bird":
       speed = animal.flyingSpeed;
       break;
-    case 'horse':
+    case "horse":
       speed = animal.runningSpeed;
+      break;
   }
-  console.log('Moving at speed: ' + speed);
+  console.log("Moving at the speed: " + speed);
 }
 
-moveAnimal({type: 'bird', flyingSpeed: 10});
+moveAnimal({ type: "bird", flyingSpeed: 10 });
 
-// const userInputElement = <HTMLInputElement>document.getElementById('user-input')!;
-const userInputElement = document.getElementById('user-input');
+// const userInputElement = <HTMLInputElement>document.getElementById("user-input")!;
+const userInputElement = document.getElementById("user-input");
 
 if (userInputElement) {
-  (userInputElement as HTMLInputElement).value = 'Hi there!';
+  (userInputElement as HTMLInputElement).value = "Hi there";
 }
