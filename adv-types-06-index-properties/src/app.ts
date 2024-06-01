@@ -38,7 +38,7 @@ result.split(" ");
 const fetchUserdata = {
   id: "u1",
   name: "Max",
-  job: { title: "CEO", description: "Company owner" }
+  job: { title: "ADMIN", description: "Company owner" }
 };
 
 console.log(fetchUserdata?.job?.title);
